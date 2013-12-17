@@ -1,0 +1,54 @@
+﻿@model IndiTownUI.PersonServiceReference.PersonProfile
+
+@if (Request.IsAuthenticated) {
+    <text>
+@*<h2>@Html.ViewContext.HttpContext.User.Identity.Name's profile</h2>*@
+<h2>@Model.Person.FullName's profile</h2>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)    
+    <fieldset>
+        <legend>Profile Details</legend>
+        <ol>
+            <li>
+                @Html.Label(@ViewRes.UserStrings.UserName)
+                @Html.ViewContext.HttpContext.User.Identity.Name
+            </li>
+            <li>
+                @Html.Label(@ViewRes.UserStrings.Gender)
+                @Html.DropDownListFor(m => m.Person.Gender, new SelectList(Enum.GetValues(typeof(Interfaces.DataContracts.Gender)), @Model.Person.Gender))
+            </li>
+            <li>
+                @Html.Label(@ViewRes.UserStrings.City)
+                @Html.EditorFor(m => m.Person.City)
+            </li>
+            <li>
+                @Html.Label(@ViewRes.UserStrings.AboutMe)
+                @Html.TextAreaFor(m => m.Person.AboutMe)
+            </li>
+            <li>
+                @Html.Label(@ViewRes.UserStrings.MyInterests)
+                @Html.EditorFor(m => m.Person.Interest)
+            </li>
+            <li>
+                @Html.HiddenFor(m => m.Person.UserId)
+                @Html.HiddenFor(m => m.Person.PersonId)
+                @Html.HiddenFor(m => m.Person.FullName)
+            </li>
+        </ol>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+    <aside>
+        <fieldset>
+            <legend>Manage your account</legend>
+            <ol>
+                <li>@Html.ActionLink("Reset Password", "ResetPassword", "User")</li>
+            </ol>
+        </fieldset>
+    </aside>
+    </text>
+}

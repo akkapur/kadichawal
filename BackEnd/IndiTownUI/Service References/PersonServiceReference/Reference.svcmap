@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4f04149d-6b41-4fbe-8936-eaaec3937f9c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/IndiTownServices/services/PersonService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PersonService.wsdl" MetadataType="Wsdl" ID="0febe8c6-68b4-4115-abeb-2e2a422bc66b" SourceId="1" SourceUrl="http://localhost/IndiTownServices/services/PersonService.svc?wsdl" />
+    <MetadataFile FileName="PersonService.xsd" MetadataType="Schema" ID="0a7ce1c9-f4c7-4916-810d-74c34686b89b" SourceId="1" SourceUrl="http://localhost/IndiTownServices/services/PersonService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PersonService.disco" MetadataType="Disco" ID="9b5c6ece-287d-4203-90a8-b67391c03638" SourceId="1" SourceUrl="http://localhost/IndiTownServices/services/PersonService.svc?disco" />
+    <MetadataFile FileName="PersonService1.xsd" MetadataType="Schema" ID="a986fd38-ae6f-4541-aef0-0b7a3fef655d" SourceId="1" SourceUrl="http://localhost/IndiTownServices/services/PersonService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PersonService2.xsd" MetadataType="Schema" ID="eb07f72b-0990-44f5-bbc3-1bcaff86266f" SourceId="1" SourceUrl="http://localhost/IndiTownServices/services/PersonService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

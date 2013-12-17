@@ -1,0 +1,58 @@
+﻿@model Interfaces.DataContracts.PersonUser
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Be an IndiTowner.</h2>
+    <p>IndiTown lets you surf, review, opinionate, share, and promote your interests, skills, business, events, with much more.</p>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Registration Form</legend>
+        <ol>
+@*            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+            </li>*@
+            <li>
+                @Html.LabelFor(m => m.Person.FullName)
+                @Html.TextBoxFor(m => m.Person.FullName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.User.EmailAddress)
+                @Html.TextBoxFor(m => m.User.EmailAddress)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.User.Password)
+                @Html.PasswordFor(m => m.User.Password)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Person.City)
+                @Html.TextBoxFor(m => m.Person.City)
+            </li>
+@*            <li>
+                @Html.LabelFor(m => m.PasswordQuestion)
+                @Html.TextBoxFor(m => m.PasswordQuestion)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.PasswordAnswer)
+                @Html.TextBoxFor(m => m.PasswordAnswer)
+            </li>*@
+@*            <li>
+                @Html.LabelFor(m => m.User.IsOrganization)
+                @Html.CheckBoxFor(m => m.User.IsOrganization)
+            </li>*@
+        </ol>
+        <input type="submit" value="SignUp" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

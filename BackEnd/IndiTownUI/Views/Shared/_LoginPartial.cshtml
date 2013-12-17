@@ -1,0 +1,18 @@
+﻿@if (Request.IsAuthenticated) {
+    <text>
+        @ViewRes.HomeStrings.Hello, @Html.ActionLink(User.Identity.Name, "UserProfile", "User", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        @Html.ActionLink(@ViewRes.HomeStrings.AddBusiness, "AddBusiness", "Organization", routeValues: null, htmlAttributes: new { id = "registerLinkBusiness" })
+        @using (Html.BeginForm("SignOut", "User", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">@ViewRes.HomeStrings.SignOut</a>
+        }
+    </text>
+} else {
+    <ul>
+        <li>@Html.ActionLink(@ViewRes.HomeStrings.SignUp, "SignUp", "Person", routeValues: null, htmlAttributes: new { id = "registerLinkPerson" })</li>
+        <li>@Html.ActionLink(@ViewRes.HomeStrings.SignUpAsBusiness, "SignUp", "Organization", routeValues: null, htmlAttributes: new { id = "registerLinkBusinessUser" })</li>
+        <li>@Html.ActionLink(@ViewRes.HomeStrings.AddBusiness, "AddBusiness", "Organization", routeValues: null, htmlAttributes: new { id = "registerLinkBusiness" })</li>
+        <li>@Html.ActionLink(@ViewRes.HomeStrings.SignIn, "SignIn", "User", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

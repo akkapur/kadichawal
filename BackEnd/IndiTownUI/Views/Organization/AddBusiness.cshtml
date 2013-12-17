@@ -1,0 +1,58 @@
+﻿@model Interfaces.DataContracts.Organization
+
+@{
+    ViewBag.Title = "Add Business";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+    <p>Help grow the community around you by adding businesses you know about.</p>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Add New Business</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.BusinessName)
+                @Html.TextBoxFor(m => m.BusinessName)
+                @Html.ValidationMessageFor(m => m.BusinessName, "Business Name is certainly important to us.")
+            </li>
+            <li>
+                @Html.LabelFor(m => m.EmailAddress)
+                @Html.TextBoxFor(m => m.EmailAddress)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.AddressLine1)
+                @Html.TextBoxFor(m => m.AddressLine1)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.AddressLine2)
+                @Html.TextBoxFor(m => m.AddressLine2)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.City)
+                @Html.TextBoxFor(m => m.City)
+                @Html.ValidationMessageFor(m => m.City, "We do need the city where the business is located.")
+            </li>
+            <li>
+                @Html.LabelFor(m => m.BusinessType)
+                @Html.DropDownListFor(m => m.BusinessType, new SelectList(Enum.GetValues(typeof(Interfaces.DataContracts.BusinessType)), Interfaces.DataContracts.BusinessType.Unknown))
+                @Html.ValidationMessageFor(m => m.City, "We do need the city where the business is located.")
+            </li>
+            <li>
+                @Html.Label("ReviewLabel", "Your Review For this Business")
+                @Html.TextArea("ReviewText")
+            </li>
+        </ol>
+        <p>
+            <input type="submit" value="Add" />
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

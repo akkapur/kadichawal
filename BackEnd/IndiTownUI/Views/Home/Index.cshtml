@@ -1,0 +1,20 @@
+﻿@*@{
+    ViewBag.Title = "Looking for something?";
+    ViewBag.Message = "Discover your neighbourhood with us.";
+}*@
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewRes.HomeStrings.IndexTitle</h1>
+                <h2>@ViewRes.HomeStrings.IndexMessage</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+@using (Html.BeginForm("DoSearch", "Search", FormMethod.Post, new { @class = "form-wrapper cf" }))
+{   
+    @*@Html.DropDownList("categories", new SelectList(Enum.GetValues(typeof(Interfaces.DataContracts.BusinessType))))*@
+            <input type="text" placeholder=@ViewRes.HomeStrings.EnterYourSearch required>
+            <button type="submit">@Html.Label(@ViewRes.HomeStrings.Search)</button>
+}

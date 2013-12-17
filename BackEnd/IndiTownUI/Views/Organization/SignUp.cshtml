@@ -1,0 +1,54 @@
+﻿@model Interfaces.DataContracts.OrganizationUser
+
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Be an IndiTowner.</h2>
+</hgroup>
+    <p>As a business, IndiTown helps you reach out to the community, promote your business to the prospective clientele, understand the interests of users.</p>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Add your Business</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Organization.BusinessName)
+                @Html.TextBoxFor(m => m.Organization.BusinessName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.User.EmailAddress)
+                @Html.TextBoxFor(m => m.User.EmailAddress)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.User.Password)
+                @Html.PasswordFor(m => m.User.Password)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Organization.AddressLine1)
+                @Html.TextBoxFor(m => m.Organization.AddressLine1)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Organization.AddressLine2)
+                @Html.TextBoxFor(m => m.Organization.AddressLine2)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Organization.City)
+                @Html.TextBoxFor(m => m.Organization.City)
+                @Html.ValidationMessageFor(m => m.Organization.City, "We do need the city where the business is located.")
+            </li>
+        </ol>
+        <p>
+            <input type="submit" value="Join" />
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

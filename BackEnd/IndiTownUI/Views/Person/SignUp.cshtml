@@ -1,0 +1,41 @@
+﻿@model Interfaces.DataContracts.PersonUser
+
+<hgroup class="title">
+    <h1>@ViewRes.HomeStrings.SignUp, </h1>
+    <h2>@ViewRes.UserStrings.BeAnIndiTowner</h2>
+</hgroup>
+    <p>IndiTown lets you surf, review, opinionate, share, and promote your interests, skills, business, events, with much more.</p>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>New User</legend>
+        <ol>
+            <li>
+                @Html.Label(@ViewRes.UserStrings.FullName)
+                @Html.TextBoxFor(m => m.Person.FullName)
+            </li>
+            <li>
+                @Html.Label(@ViewRes.UserStrings.EmailAddress)
+                @Html.TextBoxFor(m => m.User.EmailAddress)
+            </li>
+            <li>
+                @Html.Label(@ViewRes.UserStrings.Password)
+                @Html.PasswordFor(m => m.User.Password)
+            </li>
+            <li>
+                @Html.Label(@ViewRes.UserStrings.City)
+                @Html.TextBoxFor(m => m.Person.City)
+            </li>
+        </ol>
+        <p>
+            <input type="submit" value="Join" />
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

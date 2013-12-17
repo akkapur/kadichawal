@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dcae1424-c894-4b18-a802-2e10b17778ed" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/IndiTownServices/services/ReviewService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ReviewService.wsdl" MetadataType="Wsdl" ID="84e8b50c-ebda-4731-9bbe-8e80d0f12e67" SourceId="1" SourceUrl="http://localhost/IndiTownServices/services/ReviewService.svc?wsdl" />
+    <MetadataFile FileName="ReviewService1.xsd" MetadataType="Schema" ID="bea77a46-d213-42c8-95d9-4fedb6cf14a2" SourceId="1" SourceUrl="http://localhost/IndiTownServices/services/ReviewService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ReviewService.xsd" MetadataType="Schema" ID="4d62122b-ec33-4edf-8122-3845384177ad" SourceId="1" SourceUrl="http://localhost/IndiTownServices/services/ReviewService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ReviewService.disco" MetadataType="Disco" ID="e78966a3-6f28-467c-b5d5-e65f821a84d9" SourceId="1" SourceUrl="http://localhost/IndiTownServices/services/ReviewService.svc?disco" />
+    <MetadataFile FileName="ReviewService2.xsd" MetadataType="Schema" ID="b4f5ad3a-67e9-4773-9051-4b0fbe3ced58" SourceId="1" SourceUrl="http://localhost/IndiTownServices/services/ReviewService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
