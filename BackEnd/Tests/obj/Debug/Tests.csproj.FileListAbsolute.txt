@@ -28,3 +28,18 @@ C:\Users\Sneha\Documents\visual studio 2012\Projects\BackEnd\Tests\bin\Debug\Mon
 C:\Users\Sneha\Documents\visual studio 2012\Projects\BackEnd\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
 C:\Users\Sneha\Documents\visual studio 2012\Projects\BackEnd\Tests\obj\Debug\Tests.dll
 C:\Users\Sneha\Documents\visual studio 2012\Projects\BackEnd\Tests\obj\Debug\Tests.pdb
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\Tests.dll.config
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\Tests.dll
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\Tests.pdb
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\Database.dll
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\Interfaces.dll
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\MongoDB.Bson.dll
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\MongoDB.Driver.dll
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\Rhino.Mocks.dll
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\Database.pdb
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\Interfaces.pdb
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\MongoDB.Bson.xml
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\bin\Debug\MongoDB.Driver.xml
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\obj\Debug\Tests.dll
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Tests\obj\Debug\Tests.pdb

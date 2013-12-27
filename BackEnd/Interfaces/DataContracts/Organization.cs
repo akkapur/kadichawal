@@ -19,19 +19,31 @@ namespace Interfaces.DataContracts
         [EnumMember]
         Unknown = 0,
         [EnumMember]
-        Salon = 1,
+        Other = 1,
         [EnumMember]
-        GroceryStore = 2,
+        SalonSpa = 2,
         [EnumMember]
-        Restaurant = 3,
+        GroceryStore = 3,
         [EnumMember]
-        Technology = 4,
+        Restaurant = 4,
         [EnumMember]
-        Construction = 5,
+        Technology = 5,
         [EnumMember]
-        Supplies = 6,
+        Construction = 6,
         [EnumMember]
-        Other = 7
+        Supplies = 7,
+        [EnumMember]
+        Automobile = 8,
+        [EnumMember]
+        GroceryWala = 9,
+        [EnumMember]
+        MobileRepair = 10,
+        [EnumMember]
+        Plumber = 11,
+        [EnumMember]
+        Electrician = 12,
+        [EnumMember]
+        Gymnasium = 13,
     }
 
     [Collection("Organization")]
