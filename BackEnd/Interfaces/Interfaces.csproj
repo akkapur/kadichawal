@@ -52,11 +52,13 @@
   <ItemGroup>
     <Compile Include="Attributes\CollectionAttribute.cs" />
     <Compile Include="Attributes\ColumnAttribute.cs" />
+    <Compile Include="Attributes\IsTextIndexedAttribute.cs" />
     <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
     <Compile Include="DataContracts\OrganizationUser.cs" />
     <Compile Include="DataContracts\PersonProfile.cs" />
     <Compile Include="DataContracts\PersonUser.cs" />
     <Compile Include="DataContracts\Review.cs" />
+    <Compile Include="DataContracts\SearchResult.cs" />
     <Compile Include="ServiceContracts\IReviewService.cs" />
     <Compile Include="ServiceContracts\IRoleService.cs" />
     <Compile Include="DataContracts\Organization.cs" />

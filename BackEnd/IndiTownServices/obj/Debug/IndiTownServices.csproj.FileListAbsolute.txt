@@ -24,3 +24,4 @@ C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownServices\bin\MongoDB.
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownServices\obj\Debug\IndiTownServices.csprojResolveAssemblyReference.cache
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownServices\obj\Debug\IndiTownServices.dll
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownServices\obj\Debug\IndiTownServices.pdb
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownServices\bin\IndiTownServices.dll.config

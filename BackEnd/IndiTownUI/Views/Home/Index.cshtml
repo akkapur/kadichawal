@@ -12,7 +12,7 @@
         </div>
     </section>
 }
-@using (Html.BeginForm("DoSearch", "Search", FormMethod.Post, new { @class = "form-wrapper cf" }))
+@using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "form-wrapper cf" }))
 {   
     @*@Html.DropDownList("categories", new SelectList(Enum.GetValues(typeof(Interfaces.DataContracts.BusinessType))))*@
             <input type="text" placeholder=@ViewRes.HomeStrings.EnterYourSearch required>

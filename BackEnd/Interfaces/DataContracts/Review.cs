@@ -24,6 +24,7 @@ namespace Interfaces.DataContracts
         [DataMember]
         [Required]
         [Display(Name = "Review Text")]
+        [IsTextIndexed()]
         public string ReviewText { get; set; }
 
         //references the UserId

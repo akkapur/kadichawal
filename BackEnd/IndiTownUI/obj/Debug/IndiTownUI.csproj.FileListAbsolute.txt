@@ -194,3 +194,4 @@ C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\obj\Debug\IndiTown
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\obj\Debug\hi-in\IndiTownUI.resources.dll
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\obj\Debug\IndiTownUI.dll
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\obj\Debug\IndiTownUI.pdb
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\bin\IndiTownUI.dll.config

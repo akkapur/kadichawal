@@ -21,6 +21,5 @@ C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Interfaces\bin\Debug\MongoDB.
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Interfaces\bin\Debug\MongoDB.Driver.dll
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Interfaces\bin\Debug\MongoDB.Bson.xml
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Interfaces\bin\Debug\MongoDB.Driver.xml
-C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Interfaces\obj\Debug\Interfaces.dll
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\Interfaces\obj\Debug\Interfaces.pdb

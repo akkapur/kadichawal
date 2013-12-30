@@ -142,7 +142,7 @@ namespace ViewRes {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discover your neighbourhood with us..
+        ///   Looks up a localized string similar to Discover your neighborhood with us..
         /// </summary>
         public static string IndexMessage {
             get {

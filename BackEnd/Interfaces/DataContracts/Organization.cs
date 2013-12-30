@@ -59,6 +59,7 @@ namespace Interfaces.DataContracts
         [DataMember]
         [Required]
         [Display(Name = "Business Name")]
+        [IsTextIndexed()]
         public string BusinessName { get; set; }
         [DataMember]
         [Display(Name = "Email Address")]
