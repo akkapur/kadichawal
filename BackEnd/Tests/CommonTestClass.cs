@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using Database.Configuration;
 using Database.Model.Mongo;
+using Database.Model.Definition;
 
 namespace Tests
 {
@@ -16,18 +17,24 @@ namespace Tests
         [AssemblyInitialize]
         public static void AssemblySetup(TestContext context)
         {
-            RemoveTestDB();
+            SetUpDB();
 
-            IConnectionInfo connectionInfo = ConfigurationFactory.GetConnectionInfo();
-            IMongoWrapper mongoWrapper = new MongoWrapper();
-            mongoWrapper.Initialize(ConfigurationFactory.GetConnectionInfo());
-            mongoWrapper.GetDatabase();
+            //IConnectionInfo connectionInfo = ConfigurationFactory.GetConnectionInfo();
+            //IMongoWrapper mongoWrapper = new MongoWrapper();
+            //mongoWrapper.Initialize(ConfigurationFactory.GetConnectionInfo());
+            //mongoWrapper.GetDatabase();
         }
 
         [AssemblyCleanup]
         public static void AssemblyTearDown()
         {
             RemoveTestDB();
+        }
+
+        private static void SetUpDB()
+        {
+            IModelDefinition modelDef = new ModelDefinition();
+            modelDef.SetupModel();
         }
 
         private static void RemoveTestDB()

@@ -67,6 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceContracts\IOrganizationService.cs" />
     <Compile Include="ServiceContracts\IPersonService.cs" />
+    <Compile Include="ServiceContracts\ISearchService.cs" />
     <Compile Include="ServiceContracts\IUserService.cs" />
   </ItemGroup>
   <ItemGroup>

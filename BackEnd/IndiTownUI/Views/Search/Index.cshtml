@@ -1,5 +1,51 @@
-﻿@{
+﻿@using Interfaces.DataContracts
+@model IEnumerable<Interfaces.DataContracts.SearchResult>
+
+@{
     ViewBag.Title = "Search";
 }
 
-<h2>Search</h2>
+@if (!Model.Any())
+{
+    <p>
+        <h2>@ViewRes.SearchStrings.EmptySearchResults</h2>
+    </p>
+}
+else
+{
+    <h2>@ViewRes.SearchStrings.SearchResultsHeading</h2>
+
+    <table>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.Organization.BusinessName)</b>
+                    <p>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Organization.AddressLine1) ,
+                            @Html.DisplayFor(modelItem => item.Organization.AddressLine2) ,
+                        </p>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Organization.City)
+                        </p>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Organization.EmailAddress)
+                        </p>
+                    </p>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Organization.BusinessType)
+                </td>
+                @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+            </tr>
+        }
+
+    </table>
+}
+

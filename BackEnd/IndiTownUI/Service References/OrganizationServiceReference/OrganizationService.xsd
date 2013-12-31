@@ -22,12 +22,19 @@
   <xs:simpleType name="BusinessType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Unknown" />
-      <xs:enumeration value="Salon" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="SalonSpa" />
       <xs:enumeration value="GroceryStore" />
       <xs:enumeration value="Restaurant" />
       <xs:enumeration value="Technology" />
       <xs:enumeration value="Construction" />
       <xs:enumeration value="Supplies" />
+      <xs:enumeration value="Automobile" />
+      <xs:enumeration value="GroceryWala" />
+      <xs:enumeration value="MobileRepair" />
+      <xs:enumeration value="Plumber" />
+      <xs:enumeration value="Electrician" />
+      <xs:enumeration value="Gymnasium" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="BusinessType" nillable="true" type="tns:BusinessType" />

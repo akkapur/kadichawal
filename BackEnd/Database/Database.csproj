@@ -61,6 +61,7 @@
     <Compile Include="DAC\CRUD\UserCRUD.cs" />
     <Compile Include="DAC\Membership\MongoMembershipProvider.cs" />
     <Compile Include="DAC\Search\MongoSearch.cs" />
+    <Compile Include="DAC\Search\Search.cs" />
     <Compile Include="Model\Definition\ModelDefinition.cs" />
     <Compile Include="Model\Mongo\MongoWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -214,6 +214,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HomeStrings.hi-in.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Views\Search\SearchStrings.hi-in.Designer.cs">
+      <DependentUpon>SearchStrings.hi-in.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Search\SearchStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Views\User\UserStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -235,6 +245,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\ReviewServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SearchServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -363,9 +378,29 @@
     <None Include="Service References\ReviewServiceReference\ReviewService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\SearchServiceReference\IndiTownUI.SearchServiceReference.SearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\SearchServiceReference\SearchService.disco" />
+    <None Include="Service References\SearchServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\SearchServiceReference\configuration.svcinfo" />
+    <None Include="Service References\SearchServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\UserServiceReference\IndiTownUI.UserServiceReference.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\SearchServiceReference\SearchService.wsdl" />
+    <None Include="Service References\SearchServiceReference\SearchService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchServiceReference\SearchService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchServiceReference\SearchService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserServiceReference\UserService.disco" />
     <None Include="Service References\UserServiceReference\configuration91.svcinfo" />
     <None Include="Service References\UserServiceReference\configuration.svcinfo" />
@@ -463,6 +498,7 @@
     <WCFMetadataStorage Include="Service References\OrganizationServiceReference\" />
     <WCFMetadataStorage Include="Service References\PersonServiceReference\" />
     <WCFMetadataStorage Include="Service References\ReviewServiceReference\" />
+    <WCFMetadataStorage Include="Service References\SearchServiceReference\" />
     <WCFMetadataStorage Include="Service References\UserServiceReference\" />
   </ItemGroup>
   <ItemGroup>
@@ -480,6 +516,15 @@
     <EmbeddedResource Include="Resources\Views\Home\HomeStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeStrings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ViewRes</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Search\SearchStrings.hi-in.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchStrings.hi-in.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Search\SearchStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchStrings.Designer.cs</LastGenOutput>
       <CustomToolNamespace>ViewRes</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\User\UserStrings.hi-in.resx">

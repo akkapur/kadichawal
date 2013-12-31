@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Interfaces.DataContracts
 {
-    [DataContract]
     public class SearchResult
     {
         public Organization Organization { get; set; }
 
-        public Review Review { get; set; }
+        public Review[] Reviews { get; set; }
     }
 }

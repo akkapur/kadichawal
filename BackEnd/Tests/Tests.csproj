@@ -65,6 +65,7 @@
     <Compile Include="IntegrationTests\Database\DAC\CRUD\PersonCRUDTests.cs" />
     <Compile Include="IntegrationTests\Database\DAC\CRUD\ReviewCRUDTests.cs" />
     <Compile Include="IntegrationTests\Database\DAC\CRUD\UserCRUDTests.cs" />
+    <Compile Include="IntegrationTests\Database\DAC\Search\MongoSearchTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

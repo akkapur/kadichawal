@@ -96,6 +96,7 @@ C:\Users\Sneha\Documents\visual studio 2012\Projects\BackEnd\IndiTownUI\obj\Debu
 C:\Users\Sneha\Documents\visual studio 2012\Projects\BackEnd\IndiTownUI\obj\Debug\hi-in\IndiTownUI.resources.dll
 C:\Users\Sneha\Documents\visual studio 2012\Projects\BackEnd\IndiTownUI\obj\Debug\IndiTownUI.dll
 C:\Users\Sneha\Documents\visual studio 2012\Projects\BackEnd\IndiTownUI\obj\Debug\IndiTownUI.pdb
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\bin\IndiTownUI.dll.config
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\bin\IndiTownUI.dll
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\bin\IndiTownUI.pdb
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\bin\hi-in\IndiTownUI.resources.dll
@@ -194,4 +195,5 @@ C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\obj\Debug\IndiTown
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\obj\Debug\hi-in\IndiTownUI.resources.dll
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\obj\Debug\IndiTownUI.dll
 C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\obj\Debug\IndiTownUI.pdb
-C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\bin\IndiTownUI.dll.config
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\obj\Debug\IndiTownUI.Resources.Views.Search.SearchStrings.resources
+C:\Users\Sneha\Documents\GitHub\kadichawal\BackEnd\IndiTownUI\obj\Debug\IndiTownUI.Resources.Views.Search.SearchStrings.hi-in.resources

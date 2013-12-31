@@ -1,4 +1,6 @@
-﻿@*@{
+﻿@using System.ComponentModel.DataAnnotations
+@using System.Web.UI.WebControls
+@*@{
     ViewBag.Title = "Looking for something?";
     ViewBag.Message = "Discover your neighbourhood with us.";
 }*@
@@ -14,7 +16,7 @@
 }
 @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "form-wrapper cf" }))
 {   
-    @*@Html.DropDownList("categories", new SelectList(Enum.GetValues(typeof(Interfaces.DataContracts.BusinessType))))*@
-            <input type="text" placeholder=@ViewRes.HomeStrings.EnterYourSearch required>
-            <button type="submit">@Html.Label(@ViewRes.HomeStrings.Search)</button>
+    @Html.DropDownList("category", new SelectList(Enum.GetValues(typeof(Interfaces.DataContracts.BusinessType)), Interfaces.DataContracts.BusinessType.Unknown))
+    @Html.TextBox("searchstring", "", new { placeholder = @ViewRes.HomeStrings.EnterYourSearch, required = "required " })
+    <button type="submit">@Html.Label(@ViewRes.HomeStrings.Search)</button>
 }

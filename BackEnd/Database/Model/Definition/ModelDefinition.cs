@@ -61,7 +61,7 @@ namespace Database.Model.Definition
 
         private void BuildModelConfig()
         {
-            Assembly assembly = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName.Equals("Database", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+            Assembly assembly = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName.Contains("Interfaces")).FirstOrDefault();
             if (assembly != null)
             {
                 foreach (Type type in assembly.GetTypes())
@@ -90,7 +90,8 @@ namespace Database.Model.Definition
                     }
                 }
             }
-            throw new InvalidProgramException("Could not find the Database assembly.");
+            else
+                throw new InvalidProgramException("Could not find the Database assembly."); 
         }
     }
 }

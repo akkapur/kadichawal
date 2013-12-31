@@ -45,6 +45,9 @@ namespace IndiTownUI.Controllers
                 user.PasswordAnswer = organizationUser.User.PasswordAnswer;
                 userClient.CreateUser(user);
 
+                if (organizationUser.Organization.BusinessType == BusinessType.Unknown)
+                    organizationUser.Organization.BusinessType = BusinessType.Other;
+
                 IndiTownUI.OrganizationServiceReference.OrganizationServiceClient organizationClient = new OrganizationServiceReference.OrganizationServiceClient();
                 OrganizationServiceReference.Organization organization = new OrganizationServiceReference.Organization();
                 organization.UserId = user.UserId;
@@ -56,7 +59,7 @@ namespace IndiTownUI.Controllers
                 organization.Country = organizationUser.Organization.Country;
                 organization.EmailAddress = organizationUser.Organization.EmailAddress;
                 organization.State = organizationUser.Organization.State;
-
+                organization.BusinessType = (OrganizationServiceReference.BusinessType)(int)organizationUser.Organization.BusinessType;
                 organizationClient.CreateOrganization(organization);
 
                 return RedirectToAction("Index", "Home");
@@ -91,6 +94,9 @@ namespace IndiTownUI.Controllers
                 UserServiceReference.User user = userClient.GetUser(User.Identity.Name);
                 if (user != null)
                 {
+                    if(organization.BusinessType == BusinessType.Unknown)
+                        organization.BusinessType = BusinessType.Other;
+
                     IndiTownUI.OrganizationServiceReference.OrganizationServiceClient organizationClient = new OrganizationServiceReference.OrganizationServiceClient();
                     OrganizationServiceReference.Organization org = new OrganizationServiceReference.Organization();
                     org.CreatedById = user.UserId;

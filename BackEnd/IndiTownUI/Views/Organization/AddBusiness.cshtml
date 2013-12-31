@@ -39,7 +39,7 @@
             </li>
             <li>
                 @Html.LabelFor(m => m.BusinessType)
-                @Html.DropDownListFor(m => m.BusinessType, new SelectList(Enum.GetValues(typeof(Interfaces.DataContracts.BusinessType)), Interfaces.DataContracts.BusinessType.Unknown))
+                @Html.DropDownListFor(m => m.BusinessType, new SelectList(Enum.GetValues(typeof(Interfaces.DataContracts.BusinessType)), Interfaces.DataContracts.BusinessType.Other))
                 @Html.ValidationMessageFor(m => m.City, "We do need the city where the business is located.")
             </li>
             <li>
