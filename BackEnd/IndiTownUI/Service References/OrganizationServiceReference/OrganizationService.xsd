@@ -59,4 +59,10 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Gender" nillable="true" type="tns:Gender" />
+  <xs:complexType name="ArrayOfOrganization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Organization" nillable="true" type="tns:Organization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrganization" nillable="true" type="tns:ArrayOfOrganization" />
 </xs:schema>

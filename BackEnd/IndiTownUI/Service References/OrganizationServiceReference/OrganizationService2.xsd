@@ -27,4 +27,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetOrganizationByType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Interfaces.DataContracts" minOccurs="0" name="businessType" type="q3:BusinessType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Interfaces.DataContracts" minOccurs="0" name="GetOrganizationByTypeResult" nillable="true" type="q4:ArrayOfOrganization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

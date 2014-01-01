@@ -4,8 +4,12 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 using System.Web.Mvc;
-using Interfaces.DataContracts;
+using Antlr.Runtime;
+using IndiTownUI.ReviewServiceReference;
+using IndiTownUI.SearchServiceReference;
 using MongoDB.Bson;
+using Review = IndiTownUI.SearchServiceReference.Review;
+using SearchResult = Interfaces.DataContracts.SearchResult;
 
 namespace IndiTownUI.Controllers
 {
@@ -17,10 +21,13 @@ namespace IndiTownUI.Controllers
         [HttpPost]
         public ActionResult Index(FormCollection collection)
         {
-            SearchServiceReference.ISearchService searchService = new SearchServiceReference.SearchServiceClient();
             string searchString = collection["searchstring"];
             SearchServiceReference.BusinessType businessType = (SearchServiceReference.BusinessType)Enum.Parse(typeof(SearchServiceReference.BusinessType), collection["category"]);
-            SearchServiceReference.SearchResult[] results = searchService.SearchBusiness(searchString, businessType, true);
+
+            IEnumerable<SearchServiceReference.SearchResult> results = String.IsNullOrWhiteSpace(searchString)
+                ? GetSearchResultsByCategory(businessType)
+                : GetSearchResultsForSearchTerm(searchString, businessType);
+          
             List<Interfaces.DataContracts.SearchResult> searchResults =
                 results.Select(result => new Interfaces.DataContracts.Organization
                 {
@@ -34,9 +41,68 @@ namespace IndiTownUI.Controllers
                     Country = result.Organization.Country,
                     EmailAddress = result.Organization.EmailAddress,
                     State = result.Organization.State
-                }).Select(organization => new SearchResult {Organization = organization}).ToList();
+                }).Select(organization => new SearchResult {Organization = organization, Reviews = new Interfaces.DataContracts.Review[] {}}).ToList();
 
             return View(searchResults);
+        }
+
+        private IEnumerable<SearchServiceReference.SearchResult> GetSearchResultsForSearchTerm(string searchString, SearchServiceReference.BusinessType businessType)
+        {
+            SearchServiceReference.ISearchService searchService = new SearchServiceReference.SearchServiceClient();
+            SearchServiceReference.SearchResult[] results = searchService.SearchBusiness(searchString, businessType, true);
+            return results;
+        }
+
+        private IEnumerable<SearchServiceReference.SearchResult> GetSearchResultsByCategory(SearchServiceReference.BusinessType businessType)
+        {
+            IndiTownUI.OrganizationServiceReference.OrganizationServiceClient organizationClient = new OrganizationServiceReference.OrganizationServiceClient();
+            IEnumerable<OrganizationServiceReference.Organization> organizations = organizationClient.GetOrganizationByType((OrganizationServiceReference.BusinessType) (int) businessType);
+            List<SearchServiceReference.SearchResult> searchResults = new List<SearchServiceReference.SearchResult>();
+
+            foreach (OrganizationServiceReference.Organization organization in organizations)
+            {
+                SearchServiceReference.Organization tempOrganization = new Organization
+                {
+                    UserId = organization.UserId,
+                    AddressLine1 = organization.AddressLine1,
+                    AddressLine2 = organization.AddressLine2,
+                    BusinessHours = organization.BusinessHours,
+                    BusinessType = (SearchServiceReference.BusinessType) (int) organization.BusinessType,
+                    BusinessName = organization.BusinessName,
+                    City = organization.City,
+                    Country = organization.Country,
+                    EmailAddress = organization.EmailAddress,
+                    State = organization.State
+                };
+
+                IndiTownUI.ReviewServiceReference.ReviewServiceClient reviewServiceClient = new ReviewServiceClient();
+                IEnumerable<ReviewServiceReference.Review> reviews =
+                    reviewServiceClient.GetBusinessReview(organization.OrganizationId);
+
+                List<SearchServiceReference.Review> searchResultReviews = new List<Review>();
+
+                foreach (ReviewServiceReference.Review review in reviews)
+                {
+                    SearchServiceReference.Review tempReview = new Review
+                    {
+                        ReviewId = review.ReviewId,
+                        ReviewerId = review.ReviewerId,
+                        ReviewText = review.ReviewText,
+                        OrganizationId = review.OrganizationId
+                    };
+                    searchResultReviews.Add(tempReview);
+                }
+
+                SearchServiceReference.SearchResult searchResult = new SearchServiceReference.SearchResult
+                {
+                    Organization = tempOrganization,
+                    Reviews = searchResultReviews.ToArray()
+                };
+
+                searchResults.Add(searchResult);
+            }
+
+            return searchResults;
         }
         
     }

@@ -159,6 +159,12 @@ namespace IndiTownUI.ReviewServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReviewService/GetUserReviews", ReplyAction="http://tempuri.org/IReviewService/GetUserReviewsResponse")]
         System.Threading.Tasks.Task<IndiTownUI.ReviewServiceReference.Review[]> GetUserReviewsAsync(string userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReviewService/GetBusinessReview", ReplyAction="http://tempuri.org/IReviewService/GetBusinessReviewResponse")]
+        IndiTownUI.ReviewServiceReference.Review[] GetBusinessReview(string organizationId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReviewService/GetBusinessReview", ReplyAction="http://tempuri.org/IReviewService/GetBusinessReviewResponse")]
+        System.Threading.Tasks.Task<IndiTownUI.ReviewServiceReference.Review[]> GetBusinessReviewAsync(string organizationId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -210,6 +216,14 @@ namespace IndiTownUI.ReviewServiceReference {
         
         public System.Threading.Tasks.Task<IndiTownUI.ReviewServiceReference.Review[]> GetUserReviewsAsync(string userId) {
             return base.Channel.GetUserReviewsAsync(userId);
+        }
+        
+        public IndiTownUI.ReviewServiceReference.Review[] GetBusinessReview(string organizationId) {
+            return base.Channel.GetBusinessReview(organizationId);
+        }
+        
+        public System.Threading.Tasks.Task<IndiTownUI.ReviewServiceReference.Review[]> GetBusinessReviewAsync(string organizationId) {
+            return base.Channel.GetBusinessReviewAsync(organizationId);
         }
     }
 }

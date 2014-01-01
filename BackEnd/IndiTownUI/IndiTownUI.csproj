@@ -335,6 +335,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Service References\OrganizationServiceReference\IndiTownUI.OrganizationServiceReference.Organization.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\OrganizationServiceReference\OrganizationService.disco" />
     <None Include="Service References\OrganizationServiceReference\configuration91.svcinfo" />
     <None Include="Service References\OrganizationServiceReference\configuration.svcinfo" />

@@ -17,6 +17,6 @@
 @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "form-wrapper cf" }))
 {   
     @Html.DropDownList("category", new SelectList(Enum.GetValues(typeof(Interfaces.DataContracts.BusinessType)), Interfaces.DataContracts.BusinessType.Unknown))
-    @Html.TextBox("searchstring", "", new { placeholder = @ViewRes.HomeStrings.EnterYourSearch, required = "required " })
+    @Html.TextBox("searchstring", "", new { placeholder = @ViewRes.HomeStrings.EnterYourSearch })
     <button type="submit">@Html.Label(@ViewRes.HomeStrings.Search)</button>
 }

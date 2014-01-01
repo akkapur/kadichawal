@@ -36,5 +36,12 @@ namespace IndiTownServices.services
             reviewCrud.Initialize();
             return reviewCrud.Read(x => x.ReviewerId == userId);
         }
+
+        public IEnumerable<Review> GetBusinessReview(string organizationId)
+        {
+            IReviewCRUD<Review> reviewCrud = new ReviewCRUD<Review>();
+            reviewCrud.Initialize();
+            return reviewCrud.Read(x => x.OrganizationId == organizationId);            
+        }
     }
 }

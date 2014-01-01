@@ -24,5 +24,13 @@ namespace Interfaces.ServiceContracts
         /// <param name="organization">Organization to be deleted.</param>
         [OperationContract]
         void DeleteOrganization(Organization organization);
+
+        /// <summary>
+        /// Gets the list of organizations based on type of business.
+        /// </summary>
+        /// <param name="businessType"></param>
+        /// <returns></returns>
+        [OperationContract]
+        IEnumerable<Organization> GetOrganizationByType(BusinessType businessType = BusinessType.Unknown);
     }
 }

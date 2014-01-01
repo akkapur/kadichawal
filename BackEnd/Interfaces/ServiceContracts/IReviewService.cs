@@ -20,5 +20,8 @@ namespace Interfaces.ServiceContracts
 
         [OperationContract]
         IEnumerable<Review> GetUserReviews(string userId);
+
+        [OperationContract]
+        IEnumerable<Review> GetBusinessReview(string organizationId);
     }
 }

@@ -28,5 +28,12 @@ namespace IndiTownServices.services
             orgCrud.Initialize();
             //orgCrud.Delete(organization.Id);
         }
+
+        public IEnumerable<Organization> GetOrganizationByType(BusinessType businessType = BusinessType.Unknown)
+        {
+            IOrganizationCRUD<Organization> orgCrud = new OrganizationCRUD<Organization>();
+            orgCrud.Initialize();
+            return businessType == BusinessType.Unknown ? orgCrud.ReadAll() : orgCrud.Read(x => x.BusinessType == businessType);
+        }
     }
 }

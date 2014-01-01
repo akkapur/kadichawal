@@ -486,6 +486,12 @@ namespace IndiTownUI.OrganizationServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrganizationService/DeleteOrganization", ReplyAction="http://tempuri.org/IOrganizationService/DeleteOrganizationResponse")]
         System.Threading.Tasks.Task DeleteOrganizationAsync(IndiTownUI.OrganizationServiceReference.Organization organization);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrganizationService/GetOrganizationByType", ReplyAction="http://tempuri.org/IOrganizationService/GetOrganizationByTypeResponse")]
+        IndiTownUI.OrganizationServiceReference.Organization[] GetOrganizationByType(IndiTownUI.OrganizationServiceReference.BusinessType businessType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrganizationService/GetOrganizationByType", ReplyAction="http://tempuri.org/IOrganizationService/GetOrganizationByTypeResponse")]
+        System.Threading.Tasks.Task<IndiTownUI.OrganizationServiceReference.Organization[]> GetOrganizationByTypeAsync(IndiTownUI.OrganizationServiceReference.BusinessType businessType);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -529,6 +535,14 @@ namespace IndiTownUI.OrganizationServiceReference {
         
         public System.Threading.Tasks.Task DeleteOrganizationAsync(IndiTownUI.OrganizationServiceReference.Organization organization) {
             return base.Channel.DeleteOrganizationAsync(organization);
+        }
+        
+        public IndiTownUI.OrganizationServiceReference.Organization[] GetOrganizationByType(IndiTownUI.OrganizationServiceReference.BusinessType businessType) {
+            return base.Channel.GetOrganizationByType(businessType);
+        }
+        
+        public System.Threading.Tasks.Task<IndiTownUI.OrganizationServiceReference.Organization[]> GetOrganizationByTypeAsync(IndiTownUI.OrganizationServiceReference.BusinessType businessType) {
+            return base.Channel.GetOrganizationByTypeAsync(businessType);
         }
     }
 }
