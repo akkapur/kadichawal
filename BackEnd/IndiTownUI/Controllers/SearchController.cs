@@ -27,21 +27,52 @@ namespace IndiTownUI.Controllers
             IEnumerable<SearchServiceReference.SearchResult> results = String.IsNullOrWhiteSpace(searchString)
                 ? GetSearchResultsByCategory(businessType)
                 : GetSearchResultsForSearchTerm(searchString, businessType);
-          
-            List<Interfaces.DataContracts.SearchResult> searchResults =
-                results.Select(result => new Interfaces.DataContracts.Organization
+
+            List<Interfaces.DataContracts.SearchResult> searchResults = new List<SearchResult>();
+
+            foreach (SearchServiceReference.SearchResult result in results)
+            {
+                Interfaces.DataContracts.Organization organization = new Interfaces.DataContracts.Organization
                 {
                     UserId = result.Organization.UserId,
                     AddressLine1 = result.Organization.AddressLine1,
                     AddressLine2 = result.Organization.AddressLine2,
                     BusinessHours = result.Organization.BusinessHours,
-                    BusinessType = (Interfaces.DataContracts.BusinessType)(int)result.Organization.BusinessType,
+                    BusinessType = (Interfaces.DataContracts.BusinessType) (int) result.Organization.BusinessType,
                     BusinessName = result.Organization.BusinessName,
                     City = result.Organization.City,
                     Country = result.Organization.Country,
                     EmailAddress = result.Organization.EmailAddress,
-                    State = result.Organization.State
-                }).Select(organization => new SearchResult {Organization = organization, Reviews = new Interfaces.DataContracts.Review[] {}}).ToList();
+                    State = result.Organization.State,
+                    OrganizationId = result.Organization.OrganizationId
+                };
+
+                IndiTownUI.ReviewServiceReference.ReviewServiceClient reviewServiceClient = new ReviewServiceClient();
+                IEnumerable<ReviewServiceReference.Review> reviews =
+                    reviewServiceClient.GetBusinessReview(organization.OrganizationId);
+
+                List<Interfaces.DataContracts.Review> searchResultReviews = new List<Interfaces.DataContracts.Review>();
+
+                foreach (ReviewServiceReference.Review review in reviews)
+                {
+                    Interfaces.DataContracts.Review tempReview = new Interfaces.DataContracts.Review
+                    {
+                        ReviewId = review.ReviewId,
+                        ReviewerId = review.ReviewerId,
+                        ReviewText = review.ReviewText,
+                        OrganizationId = review.OrganizationId
+                    };
+                    searchResultReviews.Add(tempReview);
+                }
+
+                Interfaces.DataContracts.SearchResult searchResult = new Interfaces.DataContracts.SearchResult
+                {
+                    Organization = organization,
+                    Reviews = searchResultReviews.ToArray()
+                };
+
+                searchResults.Add(searchResult);
+            }
 
             return View(searchResults);
         }
@@ -72,7 +103,8 @@ namespace IndiTownUI.Controllers
                     City = organization.City,
                     Country = organization.Country,
                     EmailAddress = organization.EmailAddress,
-                    State = organization.State
+                    State = organization.State,
+                    OrganizationId = organization.OrganizationId
                 };
 
                 IndiTownUI.ReviewServiceReference.ReviewServiceClient reviewServiceClient = new ReviewServiceClient();

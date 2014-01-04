@@ -1,4 +1,5 @@
-﻿@using Interfaces.DataContracts
+﻿@using IndiTownUI.ReviewServiceReference
+@using Interfaces.DataContracts
 @model IEnumerable<Interfaces.DataContracts.SearchResult>
 
 @{
@@ -21,7 +22,8 @@ else
         {
             <tr>
                 <td>
-                    <b>@Html.DisplayFor(modelItem => item.Organization.BusinessName)</b>
+                    @*<b>@Html.DisplayFor(modelItem => item.Organization.BusinessName)</b>*@
+                    <b>@Html.ActionLink(@item.Organization.BusinessName, "ViewBusiness", "Organization", new { id = @item.Organization.OrganizationId }, new object())</b>
                     <p>
                         <p>
                             @Html.DisplayFor(modelItem => item.Organization.AddressLine1) ,
@@ -32,6 +34,13 @@ else
                         </p>
                         <p>
                             @Html.DisplayFor(modelItem => item.Organization.EmailAddress)
+                        </p>
+                        <p>
+                            @{
+                                string parameterValue = @item.Reviews.Count().ToString() + " Reviews";
+                            }
+
+                            @Html.DisplayFor(modelItem => parameterValue)
                         </p>
                     </p>
                 </td>

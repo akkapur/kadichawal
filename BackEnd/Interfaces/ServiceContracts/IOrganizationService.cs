@@ -32,5 +32,15 @@ namespace Interfaces.ServiceContracts
         /// <returns></returns>
         [OperationContract]
         IEnumerable<Organization> GetOrganizationByType(BusinessType businessType = BusinessType.Unknown);
+
+        /// <summary>
+        /// Get the profile of an organization to be displayed when the user selects it.
+        /// </summary>
+        /// <param name="organizationId"></param>
+        /// <returns></returns>
+        [OperationContract]
+        OrganizationProfile GetOrgranizationProfile(string organizationId);
+
+
     }
 }

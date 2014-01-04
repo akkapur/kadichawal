@@ -1,5 +1,6 @@
 ﻿
 using IndiTownUI.Internal.Attributes;
+using IndiTownUI.ReviewServiceReference;
 using Interfaces.DataContracts;
 using System;
 using System.Collections.Generic;
@@ -131,6 +132,49 @@ namespace IndiTownUI.Controllers
                 ModelState.AddModelError("", String.Format("Error Adding Business. {0}", e.Message));
                 return View(organization);
             }
+        }
+
+        public ActionResult ViewBusiness(string id)
+        {
+            IndiTownUI.OrganizationServiceReference.OrganizationServiceClient organizationClient = new OrganizationServiceReference.OrganizationServiceClient();
+            OrganizationServiceReference.OrganizationProfile profile = organizationClient.GetOrgranizationProfile(id);
+
+            Interfaces.DataContracts.Organization organization = new Interfaces.DataContracts.Organization
+            {
+                UserId = profile.Organization.UserId,
+                AddressLine1 = profile.Organization.AddressLine1,
+                AddressLine2 = profile.Organization.AddressLine2,
+                BusinessHours = profile.Organization.BusinessHours,
+                BusinessType = (Interfaces.DataContracts.BusinessType)(int)profile.Organization.BusinessType,
+                BusinessName = profile.Organization.BusinessName,
+                City = profile.Organization.City,
+                Country = profile.Organization.Country,
+                EmailAddress = profile.Organization.EmailAddress,
+                State = profile.Organization.State,
+                OrganizationId = profile.Organization.OrganizationId
+            };
+
+            IndiTownUI.ReviewServiceReference.ReviewServiceClient reviewServiceClient = new ReviewServiceClient();
+            IEnumerable<ReviewServiceReference.Review> businessReviews = reviewServiceClient.GetBusinessReview(id);
+
+            List<Interfaces.DataContracts.Review> reviews = new List<Interfaces.DataContracts.Review>();
+            foreach (ReviewServiceReference.Review review in businessReviews)
+            {
+                Interfaces.DataContracts.Review tempReview = new Interfaces.DataContracts.Review
+                {
+                    ReviewId = review.ReviewId,
+                    ReviewerId = review.ReviewerId,
+                    ReviewText = review.ReviewText,
+                    OrganizationId = review.OrganizationId
+                };
+                reviews.Add(tempReview);
+            }
+
+            Interfaces.DataContracts.OrganizationProfile organizationProfile = new OrganizationProfile();
+            organizationProfile.Organization = organization;
+            organizationProfile.Reviews = reviews.ToArray();
+
+            return View(organizationProfile);
         }
 
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)

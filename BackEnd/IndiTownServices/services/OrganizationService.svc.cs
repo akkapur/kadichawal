@@ -35,5 +35,24 @@ namespace IndiTownServices.services
             orgCrud.Initialize();
             return businessType == BusinessType.Unknown ? orgCrud.ReadAll() : orgCrud.Read(x => x.BusinessType == businessType);
         }
+
+        public OrganizationProfile GetOrgranizationProfile(string organizationId)
+        {
+            IOrganizationCRUD<Organization> orgCrud = new OrganizationCRUD<Organization>();
+            orgCrud.Initialize();
+            Organization organization = orgCrud.Read(organizationId);
+
+            IReviewCRUD<Review> reviewCrud = new ReviewCRUD<Review>();
+            reviewCrud.Initialize();
+
+            IEnumerable<Review> reviews = reviewCrud.Read(x => x.OrganizationId == organizationId);
+
+            OrganizationProfile organizationProfile = new OrganizationProfile
+            {
+                Organization = organization,
+                Reviews = reviews.ToArray()
+            };
+            return organizationProfile;
+        }
     }
 }

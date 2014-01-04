@@ -54,6 +54,7 @@
     <Compile Include="Attributes\ColumnAttribute.cs" />
     <Compile Include="Attributes\IsTextIndexedAttribute.cs" />
     <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
+    <Compile Include="DataContracts\OrganizationProfile.cs" />
     <Compile Include="DataContracts\OrganizationUser.cs" />
     <Compile Include="DataContracts\PersonProfile.cs" />
     <Compile Include="DataContracts\PersonUser.cs" />

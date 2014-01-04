@@ -65,4 +65,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfOrganization" nillable="true" type="tns:ArrayOfOrganization" />
+  <xs:complexType name="OrganizationProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Organization" nillable="true" type="tns:Organization" />
+      <xs:element minOccurs="0" name="Reviews" nillable="true" type="tns:ArrayOfReview" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrganizationProfile" nillable="true" type="tns:OrganizationProfile" />
+  <xs:complexType name="ArrayOfReview">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Review" nillable="true" type="tns:Review" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReview" nillable="true" type="tns:ArrayOfReview" />
+  <xs:complexType name="Review">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsApproved" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrganizationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewerId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Review" nillable="true" type="tns:Review" />
 </xs:schema>

@@ -61,7 +61,7 @@ namespace ViewRes {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search did not find anything..
+        ///   Looks up a localized string similar to We did not find anything..
         /// </summary>
         public static string EmptySearchResults {
             get {

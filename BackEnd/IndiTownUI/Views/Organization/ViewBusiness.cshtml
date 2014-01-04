@@ -1,0 +1,81 @@
+﻿@using System.Activities.Expressions
+@model Interfaces.DataContracts.OrganizationProfile
+
+@{
+    string orgName = Model.Organization.BusinessName;
+    ViewBag.Title = orgName;
+}
+
+<fieldset>
+    <p>
+        <b>@Html.DisplayFor(x => x.Organization.BusinessName)</b> <br/>
+        @{
+            string address = String.Format("{0}, {1}, {2}", @Model.Organization.AddressLine1, @Model.Organization.AddressLine2, @Model.Organization.City);
+        }
+        @Html.DisplayFor(x => address)<br/>
+        @Html.DisplayFor(x => x.Organization.EmailAddress)<br/>
+        @{
+            string businessHours = String.IsNullOrWhiteSpace(@Model.Organization.BusinessHours) ? "Unknown Business Hours" : @Model.Organization.BusinessHours;
+        }
+        @Html.DisplayFor(x => businessHours)<br/>
+    </p>
+    
+    @*<p>
+        Title:
+        <%=Html.Encode(Model.Title) %>
+    </p>
+    <p>
+        EventDate:
+        <%= Html.Encode(String.Format("{0:g}", Model.EventDate)) %>
+    </p>
+    <p>
+        Description:
+        <%=Html.Encode(Model.Description) %>
+    </p>
+    <p>
+        HostedBy:
+        <%=Html.Encode(Model.HostedBy) %>
+    </p>
+    <p>
+        ContactPhone:
+        <%=Html.Encode(Model.ContactPhone) %>
+    </p>
+    <p>
+        Address:
+        <%=Html.Encode(Model.Address) %>
+    </p>
+    <p>
+        Country:
+        <%=Html.Encode(Model.Country) %>
+    </p>
+    <p>
+        Latitude:
+        <%= Html.Encode(String.Format("{0:F}",Model.Latitude)) %>
+    </p>
+    <p>
+        Longitude:
+        <%= Html.Encode(String.Format("{0:F}",Model.Longitude)) %>
+    </p>*@
+</fieldset>
+
+<fieldset>
+    <legend>User Reviews</legend>
+    <table>
+
+        @foreach (var item in Model.Reviews)
+        {
+            <tr>
+                <td>
+                    <p>
+                        @Html.DisplayFor(x => item.ReviewText)
+                    </p>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</fieldset>
+@*<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

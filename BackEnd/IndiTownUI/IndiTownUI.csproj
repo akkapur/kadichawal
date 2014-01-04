@@ -338,6 +338,9 @@
     <Content Include="Service References\OrganizationServiceReference\IndiTownUI.OrganizationServiceReference.Organization.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\OrganizationServiceReference\IndiTownUI.OrganizationServiceReference.OrganizationProfile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\OrganizationServiceReference\OrganizationService.disco" />
     <None Include="Service References\OrganizationServiceReference\configuration91.svcinfo" />
     <None Include="Service References\OrganizationServiceReference\configuration.svcinfo" />
@@ -487,6 +490,7 @@
     <Content Include="Views\Shared\CultureChooserUserControl.cshtml" />
     <Content Include="Views\User\UserProfile.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Organization\ViewBusiness.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

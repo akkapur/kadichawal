@@ -210,6 +210,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IOrganizationService_GetOrgranizationProfile_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IOrganizationService_GetOrgranizationProfile_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost/IndiTownServices/services/OrganizationService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -235,6 +273,12 @@
   <wsdl:message name="IOrganizationService_GetOrganizationByType_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOrganizationByTypeResponse" />
   </wsdl:message>
+  <wsdl:message name="IOrganizationService_GetOrgranizationProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgranizationProfile" />
+  </wsdl:message>
+  <wsdl:message name="IOrganizationService_GetOrgranizationProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgranizationProfileResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOrganizationService">
     <wsdl:operation name="CreateOrganization">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrganizationService/CreateOrganization" message="tns:IOrganizationService_CreateOrganization_InputMessage" />
@@ -247,6 +291,10 @@
     <wsdl:operation name="GetOrganizationByType">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrganizationService/GetOrganizationByType" message="tns:IOrganizationService_GetOrganizationByType_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrganizationService/GetOrganizationByTypeResponse" message="tns:IOrganizationService_GetOrganizationByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgranizationProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrganizationService/GetOrgranizationProfile" message="tns:IOrganizationService_GetOrgranizationProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrganizationService/GetOrgranizationProfileResponse" message="tns:IOrganizationService_GetOrgranizationProfile_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IOrganizationService" type="tns:IOrganizationService">
@@ -282,6 +330,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IOrganizationService_GetOrganizationByType_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgranizationProfile">
+      <soap12:operation soapAction="http://tempuri.org/IOrganizationService/GetOrgranizationProfile" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IOrganizationService_GetOrgranizationProfile_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IOrganizationService_GetOrgranizationProfile_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

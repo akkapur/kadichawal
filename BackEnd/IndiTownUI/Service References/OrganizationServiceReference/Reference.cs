@@ -471,6 +471,192 @@ namespace IndiTownUI.OrganizationServiceReference {
         Complicated = 3,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrganizationProfile", Namespace="http://schemas.datacontract.org/2004/07/Interfaces.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class OrganizationProfile : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private IndiTownUI.OrganizationServiceReference.Organization OrganizationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private IndiTownUI.OrganizationServiceReference.Review[] ReviewsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public IndiTownUI.OrganizationServiceReference.Organization Organization {
+            get {
+                return this.OrganizationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrganizationField, value) != true)) {
+                    this.OrganizationField = value;
+                    this.RaisePropertyChanged("Organization");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public IndiTownUI.OrganizationServiceReference.Review[] Reviews {
+            get {
+                return this.ReviewsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReviewsField, value) != true)) {
+                    this.ReviewsField = value;
+                    this.RaisePropertyChanged("Reviews");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Review", Namespace="http://schemas.datacontract.org/2004/07/Interfaces.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class Review : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreationDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsApprovedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrganizationIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReviewIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReviewTextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReviewerIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreationDate {
+            get {
+                return this.CreationDateField;
+            }
+            set {
+                if ((this.CreationDateField.Equals(value) != true)) {
+                    this.CreationDateField = value;
+                    this.RaisePropertyChanged("CreationDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsApproved {
+            get {
+                return this.IsApprovedField;
+            }
+            set {
+                if ((this.IsApprovedField.Equals(value) != true)) {
+                    this.IsApprovedField = value;
+                    this.RaisePropertyChanged("IsApproved");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrganizationId {
+            get {
+                return this.OrganizationIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrganizationIdField, value) != true)) {
+                    this.OrganizationIdField = value;
+                    this.RaisePropertyChanged("OrganizationId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReviewId {
+            get {
+                return this.ReviewIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReviewIdField, value) != true)) {
+                    this.ReviewIdField = value;
+                    this.RaisePropertyChanged("ReviewId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReviewText {
+            get {
+                return this.ReviewTextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReviewTextField, value) != true)) {
+                    this.ReviewTextField = value;
+                    this.RaisePropertyChanged("ReviewText");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReviewerId {
+            get {
+                return this.ReviewerIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReviewerIdField, value) != true)) {
+                    this.ReviewerIdField = value;
+                    this.RaisePropertyChanged("ReviewerId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="OrganizationServiceReference.IOrganizationService")]
     public interface IOrganizationService {
@@ -492,6 +678,12 @@ namespace IndiTownUI.OrganizationServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrganizationService/GetOrganizationByType", ReplyAction="http://tempuri.org/IOrganizationService/GetOrganizationByTypeResponse")]
         System.Threading.Tasks.Task<IndiTownUI.OrganizationServiceReference.Organization[]> GetOrganizationByTypeAsync(IndiTownUI.OrganizationServiceReference.BusinessType businessType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrganizationService/GetOrgranizationProfile", ReplyAction="http://tempuri.org/IOrganizationService/GetOrgranizationProfileResponse")]
+        IndiTownUI.OrganizationServiceReference.OrganizationProfile GetOrgranizationProfile(string organizationId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrganizationService/GetOrgranizationProfile", ReplyAction="http://tempuri.org/IOrganizationService/GetOrgranizationProfileResponse")]
+        System.Threading.Tasks.Task<IndiTownUI.OrganizationServiceReference.OrganizationProfile> GetOrgranizationProfileAsync(string organizationId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -543,6 +735,14 @@ namespace IndiTownUI.OrganizationServiceReference {
         
         public System.Threading.Tasks.Task<IndiTownUI.OrganizationServiceReference.Organization[]> GetOrganizationByTypeAsync(IndiTownUI.OrganizationServiceReference.BusinessType businessType) {
             return base.Channel.GetOrganizationByTypeAsync(businessType);
+        }
+        
+        public IndiTownUI.OrganizationServiceReference.OrganizationProfile GetOrgranizationProfile(string organizationId) {
+            return base.Channel.GetOrgranizationProfile(organizationId);
+        }
+        
+        public System.Threading.Tasks.Task<IndiTownUI.OrganizationServiceReference.OrganizationProfile> GetOrgranizationProfileAsync(string organizationId) {
+            return base.Channel.GetOrgranizationProfileAsync(organizationId);
         }
     }
 }
